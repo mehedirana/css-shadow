@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
+
 import './App.css';
 
 function App() {
+  const [horizontalLen, setHorizontalLen] = useState(10);
+  const [verticalLen, setHverticalLen] = useState(10);
+  const [blur, setBlur] = useState(10);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="controls">
+        <label>Horizontal length</label>
+        <input type="range" id="test5" min="-200" max="200" value={horizontalLen} onChange={(e) => setHorizontalLen(e.target.value)} />
+        <label>Vertical length</label>
+        <input type="range" id="test5" min="-200" max="200" value={verticalLen} onChange={(e) => setHverticalLen(e.target.value)} />
+        <label>Blur</label>
+        <input type="range" id="test5" min="0" max="200" value={blur} onChange={(e) => setBlur(e.target.value)} />
+      </div>
+      <div className="output">
+        <div className="box">
+
+        </div>
+
+      </div>
     </div>
   );
 }
