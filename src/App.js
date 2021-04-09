@@ -18,7 +18,7 @@ function App() {
         <input type="range" id="test5" min="0" max="200" value={blur} onChange={(e) => setBlur(e.target.value)} />
       </div>
       <div className="output">
-        <div className="box">
+        <div className="box" style={{boxShadow:`${horizontalLen}px ${verticalLen}px ${blur}px black`}}>
 
         </div>
 
